@@ -1,13 +1,188 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a {
+  color: inherit !important;
+}
+
+/* ============= Roots & Const ================ */
+
+:root {
+  --mainColor: #1abc9c;
+  --mainColorBgNav: #2c3e50;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fs-95 {
+  font-size: 95px;
+}
+
+.z-1000 {
+  z-index: 1500;
+}
+
+.bg-layer {
+  background-color: #2e2c3873;
+}
+
+/* ============= Fixed Items  ================ */
+
+.decoration .line::before {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  left: -200%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.decoration .line::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  right: -200%;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+.bgWhite .decoration .line::before {
+  background-color: var(--mainColorBgNav);
+}
+
+.bgWhite .decoration .line::after {
+  background-color: var(--mainColorBgNav);
+}
+
+/* ============= Navbar  ================ */
+
+nav {
+  background-color: var(--mainColorBgNav);
+  color: #fff;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  background-color: var(--mainColor);
+  border-radius: 5px;
+}
+
+/*========  Hero page  ============*/
+
+#hero {
+  height: calc(100vh - 100px);
+  margin-top: 100px;
+  background-color: var(--mainColor);
+  color: #fff;
+}
+
+#hero img {
+  width: 200px;
+}
+
+/*========  Footer Info page  ============*/
+
+#footerInfo {
+  background-color: var(--mainColorBgNav);
+  color: #fff;
+}
+
+#footerInfo ul li {
+  border: #fff 1px solid;
+  border-radius: 50%;
+}
+
+/*========  Copy Right Footer page  ============*/
+
+#CRFooter {
+  color: #fff;
+  background-color: #0c1116;
+}
+
+/*========  About page  ============*/
+
+#about {
+  height: calc(100vh - 100px);
+  margin-top: 100px;
+  background-color: var(--mainColor);
+  color: #fff;
+}
+
+/*========  Portfolio page  ============*/
+
+#portfolio {
+  color: var(--mainColorBgNav);
+}
+
+#portfolio #item {
+  color: white;
+  cursor: pointer;
+}
+
+#portfolio #item .layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mainColor);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+#portfolio #item:hover .layer {
+  opacity: 0.9;
+}
+
+/*========  Contact page  ============*/
+
+#contact form label {
+  color: var(--mainColor) ;
+  left: 0;
+  transition: all .1s;
+}
+
+#contact form input {
+  border: 0 !important;
+  border-bottom: var(--bs-border-width) solid var(--bs-border-color) !important  ;
+  padding-bottom: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+input::placeholder {
+  margin-bottom: 50px !important;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0 !important;
+}
+
+#contact form button{
+  background-color: var(--mainColor);
+  color: #fff;
+  width: fit-content;
 }
